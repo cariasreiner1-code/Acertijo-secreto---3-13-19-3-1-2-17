@@ -3,66 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="google-site-verification" content="dSZ-7tnFYNzmcstPcZ9nUtsB3NpXhUUIb7ztSkfc0Bw" />
-<meta name="description" content="Acertijo 3 13 19 3 1 2 17">
+
+<meta name="google-site-verification" content="dSZ-7tnFYNzmcstPcZ9nUtsB3NpXhUUIb7ztSkfc0Bw">
+
+<meta name="description" content="Acertijo secreto: encuentra la primera pista resolviendo el código.">
 <meta name="robots" content="index, follow">
+
 <title>Acertijo secreto</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
-font-family:Arial,sans-serif;color:#eee;background:radial-gradient(circle at top,#18212d,#080b10 55%,#030406)}
-.card{width:min(92%,440px);padding:32px;border:1px solid #303944;border-radius:22px;
-background:rgba(10,13,18,.92);box-shadow:0 20px 70px #0008;text-align:center}
-h1{margin:0 0 10px;font-size:29px;letter-spacing:4px}
-.subtitle{color:#8e9aaa;margin:0 0 25px}
-.code{width:100%;padding:15px;border-radius:12px;border:1px solid #3b4654;
-background:#11161d;color:#fff;font-size:18px;text-align:center;outline:none}
-button{width:100%;margin-top:12px;padding:14px;border:0;border-radius:12px;
-background:#fff;color:#080b10;font-size:16px;font-weight:bold;cursor:pointer}
-.message{margin-top:22px;line-height:1.6;min-height:28px}
-.next{display:block;margin-top:18px;padding:13px;border:1px solid #3b4654;
-border-radius:12px;color:#fff;text-decoration:none}
-.hidden{display:none}
-.small{margin-top:25px;color:#596575;font-size:12px}
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial,sans-serif;
+  color:#eee;
+  background:radial-gradient(
+    circle at top,
+    #18212d,
+    #080b10 55%,
+    #030406
+  )
+}
+
+.card{
+  width:min(92%,440px);
+  padding:32px;
+  border:1px solid #303944;
+  border-radius:22px;
+  background:rgba(10,13,18,.92);
+  box-shadow:0 20px 70px #0008;
+  text-align:center
+}
+
+h1{
+  margin:0 0 10px;
+  font-size:29px;
+  letter-spacing:4px
+}
+
+.subtitle{
+  color:#8e9aaa;
+  margin:0 0 25px
+}
+
+.code{
+  width:100%;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #3b4654;
+  background:#11161d;
+  color:#fff;
+  font-size:18px;
+  text-align:center;
+  outline:none
+}
+
+button{
+  width:100%;
+  margin-top:12px;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  background:#fff;
+  color:#080b10;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+.message{
+  margin-top:22px;
+  line-height:1.6;
+  min-height:28px
+}
+
+.next{
+  display:block;
+  margin-top:18px;
+  padding:13px;
+  border:1px solid #3b4654;
+  border-radius:12px;
+  color:#fff;
+  text-decoration:none
+}
+
+.hidden{
+  display:none
+}
 </style>
 </head>
+
 <body>
+
 <main class="card">
+
 <h1>ACERTIJO</h1>
-<p class="subtitle">Si encontraste los números, estás cerca.</p>
-<input id="code" class="code" placeholder="Introduce el código" autocomplete="off">
-<button onclick="checkCode()">DESCUBRIR</button>
+
+<p class="subtitle">
+Si encontraste los números, estás cerca.
+</p>
+
+<input
+  id="code"
+  class="code"
+  placeholder="Introduce el código"
+  autocomplete="off"
+>
+
+<button onclick="checkCode()">
+DESCUBRIR
+</button>
+
 <div id="message" class="message"></div>
-<a id="next" class="next hidden" target="_blank" rel="noopener">CONTINUAR</a>
+
+<a
+  id="next"
+  class="next hidden"
+  target="_blank"
+  rel="noopener"
+>
+CONTINUAR
+</a>
 
 </main>
 
 <script>
-const CONFIG={
-code:"3 13 19 3 1 2 17",
-success:"Correcto. Has encontrado la primera pista. Ahora vuelve a mi perfil de TikTok y busca la siguiente pista.",
-nextText:"VOLVER A TIKTOK",
-nextUrl:"https://youtube.com/@ryct-ryct"
+
+const CONFIG = {
+  code:"3 13 19 3 1 2 17",
+
+  success:
+  "Correcto. Has encontrado la primera pista. Ahora continúa con la siguiente pista.",
+
+  nextText:
+  "IR A LA SIGUIENTE PISTA",
+
+  nextUrl:
+  "https://youtube.com/@ryct-ryct"
 };
 
 function checkCode(){
- const input=document.getElementById("code").value.trim();
- const message=document.getElementById("message");
- const next=document.getElementById("next");
- if(input===CONFIG.code){
-   message.textContent=CONFIG.success;
-   if(CONFIG.nextUrl){
-     next.href=CONFIG.nextUrl;
-     next.classList.remove("hidden");
-   }
- }else{
-   message.textContent="Ese código no es correcto. Sigue buscando.";
-   next.classList.add("hidden");
- }
+
+  const input =
+    document.getElementById("code").value.trim();
+
+  const message =
+    document.getElementById("message");
+
+  const next =
+    document.getElementById("next");
+
+  if(input === CONFIG.code){
+
+    message.textContent =
+      CONFIG.success;
+
+    next.textContent =
+      CONFIG.nextText;
+
+    next.href =
+      CONFIG.nextUrl;
+
+    next.classList.remove("hidden");
+
+  }else{
+
+    message.textContent =
+      "Ese código no es correcto. Sigue buscando.";
+
+    next.classList.add("hidden");
+  }
 }
-document.getElementById("code").addEventListener("keydown",e=>{
- if(e.key==="Enter") checkCode();
-});
+
+document
+  .getElementById("code")
+  .addEventListener("keydown", e => {
+
+    if(e.key === "Enter"){
+      checkCode();
+    }
+
+  });
+
 </script>
+
 </body>
 </html>
